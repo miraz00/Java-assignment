@@ -9,7 +9,7 @@ class student
   float cgpa;
 }
 
-class main
+class exp1
 {
 	public static void main(String args[])
 	{
@@ -34,36 +34,39 @@ class main
 		  
 		  System.out.print("Age:");
 		  obj[i].age=sc.nextInt();
+		  sc.nextLine();
 			
 		  System.out.print("Phone No:");
 		  obj[i].phone=sc.nextLine();
+		  
 			
 		  System.out.print("CGPA:");
-		  obj[i].cgpa=sc.nextFloat();  
+		  obj[i].cgpa=sc.nextFloat();
+		  sc.nextLine();
 		}  
 		
 		int j=0,k=10,l=0;
-		for(int i=0;i<9;i++)
+		for(int i=0;i<10;i++)
 		{
-		  if(obj[i].cgpa<obj[i+1].cgpa)
-		    j=i+1;
+		  if(obj[j].cgpa<obj[i].cgpa)
+		    j=i;
 		
-		  if(obj[i].name=="ANU")
+		  if(obj[i].name.equalsIgnoreCase("ANU"))
 		    k=i;
-		  else if(obj[9].name=="ANU")
-			k=9;
-			
-		  if(obj[i].age>obj[i+1].age)
-		    l=i+1;
+		  
+		  if(obj[l].age>obj[i].age)
+		    l=i;
 		}
 		
 		System.out.println("Name of student with highest CGPA:"+obj[j].name);
 		
 		if(k!=10)
-		  System.out.println("Phone number of student named 'Anu':"+obj[k].phone);
+		  System.out.println("Phone number of student named ANU:"+obj[k].phone);
 		else
 		  System.out.println("There is no student named ANU");
 		  
-		System.out.println("Roll number of youngest student:"+obj[l].age);
+		System.out.println("Roll number of youngest student:"+obj[l].rollno);
+		
+		sc.close();
 	}
 }
